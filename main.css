@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  resize: auto;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  background-color: black;
+  width: 100%;
+}
+
+.primary-nav {
+  display: flex;
+  flex-flow: column wrap;
+  margin: auto;
+  background-color: rgb(55, 53, 53);
+  width: 100%;
+  color: whitesmoke;
+  padding: 0.8em 4px 0.8em 4px;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+  /* -webkit-text-stroke: 0.3px black; */
+  overflow: hidden;
+}
+
+
+.time-container {
+  display: flex;
+  border: white solid 1px;
+  width: 85%; 
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.time-output {
+  border: 5px solid #003b00;
+  border-radius: 60%;
+  display: inline-block;
+  margin: 1em;
+  padding: 3.5em 3em 3.5em 3em;
+  font-size: 40px;
+  color: #008f11;
+  flex-flow: row wrap;
+  text-align: center;
+  justify-content: center;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.button-container {
+  display: flex;
+  border: 1px solid white; 
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-wrap: row wrap;
+  margin: auto;
+  width: 85%;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+
+.start-btn, .reset-btn {
+  display: flex;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+ .reset-btn {
+  background-color:  rgb(55, 53, 53);
+  margin-left: 20em;
+  border: 2px solid grey;
+  border-radius: 50%;
+  padding: 1.5em 1em 1.5em 1em;
+} 
+
+ .start-btn {
+  background-color: #008f11;
+  margin-right: 20em;
+  border: 2px solid #003b00;
+  border-radius: 50%;
+  padding: 1.5em 1em 1.5em 1em;
+} 
+
+
+
+.stop-btn {
+  background-color: red;
+  margin-right: 20em;
+  border-radius: 50%;
+  padding: 1.5em 1em 1.5em 1em;
+}
+
+.lap-btn {
+  background-color:  rgb(120, 116, 116);
+  margin-left: 20em;
+  border: 2px solid rgb(55, 53, 53);
+  border-radius: 50%;
+  padding: 1.5em 1em 1.5em 1em;
+}
+
+.lap-output {
+  display: flex;
+  grid-template-columns: 780px 50px 10px;
+  column-gap: 10px;
+  color: white;
+  border: 1px white solid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  margin: auto;
+  width: 85%;
+  overflow: hidden;
+}
+
+@media all and (max-width: 1057px) {
+  .body {
+    font-size: 9px;
+  }
+  .time-container {
+    margin-top: 3em;
+    width: 60%;
+  }
+  
+  .button-container {
+    width: 60%;
+  }
+  
+  .reset-btn, .lap-btn{
+   margin-left: 10em;
+  }
+  
+  .start-btn, stop-btn {
+    margin-right: 10em;
+  }
+
+  .lap-output {
+    grid-template-columns: 450px 40px 10px;
+    width:  60%;
+  }
+
+  .time-output {
+    font-size: 40px;
+  }
+
+}
+
+@media all and (max-width: 800px) {
+
+  .time-container {
+    margin-top: 2em;
+  }
+  
+  button-container {
+    width: 80%;
+  }
+  
+  .reset-btn, .lap-btn{
+   margin-left: 10em;
+  }
+  
+  .start-btn, stop-btn {
+    margin-right: 10em;
+  }
+
+  .lap-output {
+    grid-template-columns: 450px 40px 10px;
+    width: 85%;
+    
+  }
+
+  .time-output {
+    font-size: 30px;
+  }
+
+}
