@@ -4,37 +4,25 @@
   <meta charset="UTF-8">
   <meta name = "author" content = "Neo Smith">
   <meta name = "description" content = "Stopwatch">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./main.css" type="text/css" media="all">
   <title>Erron's Stopwatch</title>
 </head>
 <body>
  <nav class="primary-nav"><div>Erron's Stopwatch</div></nav> 
   <div class="time-container">
-    <span class="time-output js-time-output">00:00.00</span>
+    <div class="time-output js-time-output">
+      <span class="js-tens">00</span>:<span class="js-seconds">00</span>.<span class="js-miliseconds">00</span>
+    </div>
   </div> 
 <!--   <p class="quote"></p> -->
   <div class="button-container">
     <button class="start-btn js-start-btn">Start</button>
-    <button class="reset-btn js-reset-lap-btn">Reset</button>
+    <button class="reset-btn js-reset-btn">Reset</button>
   </div>
-  <div class="js-lap-output lap-output"><div>Lap 1</div>
-  <div>00:05.81</div>
-  </div>
-  <div class="js-lap-output lap-output"><div>Lap 1</div>
-  <div>00:05.81</div>
-  </div>
-  <div class="js-lap-output lap-output"><div>Lap 1</div>
-  <div>00:05.81</div>
-  </div>
-  <div class="js-lap-output lap-output"><div>Lap 1</div>
-  <div>00:05.81</div>
-  </div>
-  <div class="js-lap-output lap-output"><div>Lap 1</div>
-  <div>00:05.81</div>
-  </div>
-  <div class="js-lap-output lap-output"><div>Lap 1</div>
-  <div>00:05.81</div>
-  </div>
+  <div class="js-lap-output lap-output"><div></div>
+
+  
   <script src="./index.js"></script>
 </body>
 </html>

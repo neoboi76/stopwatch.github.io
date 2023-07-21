@@ -32,13 +32,13 @@ body {
 
 .time-container {
   display: flex;
-  border: white solid 1px;
+/*   border: white solid 1px; */
   width: 85%; 
   margin: auto;
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   white-space: nowrap;
 }
 
@@ -54,12 +54,12 @@ body {
   text-align: center;
   justify-content: center;
   font-weight: bold;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .button-container {
   display: flex;
-  border: 1px solid white; 
+/*   border: 1px solid white;  */
   align-items: center;
   justify-content: center;
   position: relative;
@@ -67,7 +67,7 @@ body {
   margin: auto;
   width: 85%;
   margin-bottom: 1em;
-  overflow: hidden;
+ /*  overflow: hidden; */
 }
 
 .start-btn, .reset-btn {
@@ -92,99 +92,299 @@ body {
   margin-right: 20em;
   border: 2px solid #003b00;
   border-radius: 50%;
-  padding: 1.5em 1em 1.5em 1em;
-} 
-
+  padding: 1.5em 1.2em 1.5em 1.2em;
+}
 
 
 .stop-btn {
   background-color: red;
   margin-right: 20em;
   border-radius: 50%;
-  padding: 1.5em 1em 1.5em 1em;
+  padding: 1.5em 1.2em 1.5em 1.2em;
+  border: 1px solid grey;
 }
 
 .lap-btn {
   background-color:  rgb(120, 116, 116);
   margin-left: 20em;
   border: 2px solid rgb(55, 53, 53);
-  border-radius: 50%;
-  padding: 1.5em 1em 1.5em 1em;
+/*   border-radius: 50%; */
+  padding: 1.5em 1.5em 1.5em 1.5em;
 }
 
 .lap-output {
-  display: flex;
+  display: grid;
   grid-template-columns: 780px 50px 10px;
   column-gap: 10px;
   color: white;
-  border: 1px white solid;
+  border: 1px rgb(44, 44, 44) solid;
   justify-content: center;
   align-items: center;
   margin-top: 0.5em;
   padding: 0.5em 0.5em 0.5em 0.5em;
   margin: auto;
   width: 85%;
-  overflow: hidden;
+ /*  overflow: hidden; */
 }
 
-@media all and (max-width: 1057px) {
-  .body {
-    font-size: 9px;
-  }
-  .time-container {
-    margin-top: 3em;
-    width: 60%;
-  }
+@media all and  (max-width: 980px) {
   
-  .button-container {
-    width: 60%;
+  .start-btn{
+    margin-right: 13em;
   }
-  
-  .reset-btn, .lap-btn{
-   margin-left: 10em;
+  .stop-btn{
+    margin-right: 13em;
   }
-  
-  .start-btn, stop-btn {
-    margin-right: 10em;
+  .reset-btn {
+    margin-left: 13em;
   }
-
-  .lap-output {
-    grid-template-columns: 450px 40px 10px;
-    width:  60%;
+  .lap-btn {
+    margin-left: 13em;
   }
-
-  .time-output {
-    font-size: 40px;
+  .lap-output{
+    grid-template-columns: 540px 50px 10px;
   }
-
 }
 
-@media all and (max-width: 800px) {
-
-  .time-container {
-    margin-top: 2em;
-  }
-  
-  button-container {
-    width: 80%;
-  }
-  
-  .reset-btn, .lap-btn{
-   margin-left: 10em;
-  }
-  
-  .start-btn, stop-btn {
+@media all and  (max-width: 700px) {
+  .start-btn{
     margin-right: 10em;
   }
+  .stop-btn{
+    margin-right: 10em;
+  }
+  .reset-btn {
+    margin-left: 10em;
+  }
+  .lap-btn {
+    margin-left: 10em;
+  }
+  .lap-output{
+    grid-template-columns: 430px 50px 10px;
+  }
+}
 
-  .lap-output {
-    grid-template-columns: 450px 40px 10px;
-    width: 85%;
-    
+@media all and  (max-width: 592px) {
+  .start-btn{
+    margin-right: 8em;
+  }
+  .stop-btn{
+    margin-right: 8em;
+  }
+  .reset-btn {
+    margin-left: 8em;
+  }
+  .lap-btn {
+    margin-left: 8em;
+  }
+  .lap-output{
+    grid-template-columns: 350px 50px 10px;
+  }
+}
+
+@media all and  (max-width: 500px) {
+  
+  .primary-nav {
+    font-size: 18px;
   }
 
-  .time-output {
+  .time-output{
+    font-size: 35px;
+  }
+  
+  .start-btn{
+    margin-right: 7em;
+    font-size: 18px;
+  }
+  .stop-btn{
+    margin-right: 7em;
+    font-size: 18px;
+  }
+  
+  .reset-btn {
+    margin-left: 7em;
+    font-size: 18px;
+  }
+  .lap-btn {
+    margin-left: 7em;
+    font-size: 18px;
+  }
+  .lap-output{
+    grid-template-columns: 300px 50px 10px;
+    font-size: 18px;;
+  }
+}
+
+@media all and  (max-width: 460px) {
+  
+  .primary-nav {
+    font-size: 17px;
+ }
+  .time-output{
+    font-size: 35px;
+  }
+  
+  .start-btn{
+    margin-right: 7em;
+    font-size: 17px;
+  }
+  .stop-btn{
+    margin-right: 7em;
+    font-size: 17px;
+  }
+  
+  .reset-btn {
+    margin-left: 7em;
+    font-size: 17px;
+  }
+  .lap-btn {
+    margin-left: 7em;
+    font-size: 17px;
+  }
+  .lap-output{
+    grid-template-columns: 280px 50px 10px;
+    font-size: 17px;
+  }
+}
+
+@media all and  (max-width: 435px) {
+  
+  .primary-nav {
+    font-size: 17px;
+ }
+  .time-output{
+    font-size: 33px;
+  }
+  
+  .start-btn{
+    margin-right: 5em;
+    font-size: 17px;
+  }
+  .stop-btn{
+    margin-right: 5em;
+    font-size: 17px;
+  }
+  
+  .reset-btn {
+    margin-left: 5em;
+    font-size: 17px;
+  }
+  .lap-btn {
+    margin-left: 5em;
+    font-size: 17px;
+  }
+  .lap-output{
+    grid-template-columns: 230px 50px 10px;
+    font-size: 17px;
+  }
+}
+
+@media all and  (max-width: 400px) {
+  
+  .primary-nav {
+    font-size: 16px;
+ }
+
+ .time-container {
+  margin-top: 3em;
+ }
+  .time-output{
     font-size: 30px;
   }
-
+  
+  .start-btn{
+    margin-right: 5em;
+    font-size: 16px;
+  }
+  .stop-btn{
+    margin-right: 5em;
+    font-size: 16px;
+  }
+  
+  .reset-btn {
+    margin-left: 5em;
+    font-size: 16px;
+  }
+  .lap-btn {
+    margin-left: 5em;
+    font-size: 16px;
+  }
+  .lap-output{
+    grid-template-columns: 230px 50px 10px;
+    font-size: 16px;
+  }
 }
+
+
+@media all and  (max-width: 356px) {
+  
+  .primary-nav {
+    font-size: 15px;
+ }
+
+ .time-container {
+  margin-top: 3em;
+ }
+  .time-output{
+    font-size: 25px;
+  }
+  
+  .start-btn{
+    margin-right: 4em;
+    font-size: 15px;
+  }
+  .stop-btn{
+    margin-right: 4em;
+    font-size: 15px;
+  }
+  
+  .reset-btn {
+    margin-left: 4em;
+    font-size: 15px;
+  }
+  .lap-btn {
+    margin-left: 4em;
+    font-size: 15px;
+  }
+  .lap-output{
+    grid-template-columns: 170px 50px 10px;
+    font-size: 15px;
+  }
+}
+
+@media all and  (max-width: 307px) {
+  
+  .primary-nav {
+    font-size: 15px;
+ }
+
+ .time-container {
+  margin-top: 4em;
+ }
+  .time-output{
+    font-size: 20px;
+  }
+  
+  .start-btn{
+    margin-right: 3em;
+    font-size: 14px;
+  }
+  .stop-btn{
+    margin-right: 3em;
+    font-size: 14px;
+  }
+  
+  .reset-btn {
+    margin-left: 3em;
+    font-size: 14px;
+  }
+  .lap-btn {
+    margin-left: 3em;
+    font-size: 114px;
+  }
+  .lap-output{
+    grid-template-columns: 140px 40px 10px;
+    font-size: 14px;
+  }
+}
+
