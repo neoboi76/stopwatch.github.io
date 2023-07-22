@@ -65,7 +65,7 @@ startElement.addEventListener('click', () => {
     resetElement.innerText = 'Lap';
     startElement.classList.add('stop-btn');
     resetElement.classList.add('lap-btn');
-    intervalId = setInterval(startTimer);
+    intervalId = setInterval(startTimer, 10);
     
     
   }else {
