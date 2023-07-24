@@ -25,20 +25,17 @@ body {
   font-weight: bold;
   font-size: 20px;
   position: relative;
-  /* -webkit-text-stroke: 0.3px black; */
   overflow: hidden;
 }
 
 
 .time-container {
   display: flex;
-/*   border: white solid 1px; */
   width: 85%; 
   margin: auto;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* overflow: hidden; */
   white-space: nowrap;
 }
 
@@ -48,18 +45,16 @@ body {
   display: inline-block;
   margin: 1em;
   padding: 3.5em 3em 3.5em 3em;
-  font-size: 60px;
+  font-size: 55px;
   color: #008f11;
   flex-flow: row wrap;
   text-align: center;
   justify-content: center;
   font-weight: bold;
-  /* overflow: hidden; */
 }
 
 .button-container {
   display: flex;
-/*   border: 1px solid white;  */
   align-items: center;
   justify-content: center;
   position: relative;
@@ -67,7 +62,6 @@ body {
   margin: auto;
   width: 85%;
   margin-bottom: 1em;
- /*  overflow: hidden; */
 }
 
 .start-btn, .reset-btn {
@@ -76,7 +70,6 @@ body {
   color: white;
   font-weight: bold;
   cursor: pointer;
-  
 }
 
  .reset-btn {
@@ -95,7 +88,6 @@ body {
   padding: 1.5em 1.2em 1.5em 1.2em;
 }
 
-
 .stop-btn {
   background-color: red;
   margin-right: 20em;
@@ -108,8 +100,18 @@ body {
   background-color:  rgb(120, 116, 116);
   margin-left: 20em;
   border: 2px solid rgb(55, 53, 53);
-/*   border-radius: 50%; */
   padding: 1.5em 1.5em 1.5em 1.5em;
+}
+.quote {
+  color: Whitesmoke;
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+  overflow: hidden;
+  font-size: 20px;
 }
 
 .lap-output {
@@ -124,7 +126,6 @@ body {
   padding: 0.5em 0.5em 0.5em 0.5em;
   margin: auto;
   width: 85%;
- /*  overflow: hidden; */
 }
 
 footer {
@@ -172,6 +173,7 @@ footer {
   .lap-btn {
     margin-left: 10em;
   }
+ 
   .lap-output{
     grid-template-columns: 430px 50px 10px;
   }
@@ -217,7 +219,6 @@ footer {
     margin-right: 7em;
     font-size: 18px;
   }
-  
   .reset-btn {
     margin-left: 7em;
     font-size: 18px;
@@ -225,6 +226,9 @@ footer {
   .lap-btn {
     margin-left: 7em;
     font-size: 18px;
+  }
+  .quote {
+    font-size: 18px;;
   }
   .lap-output{
     grid-template-columns: 300px 50px 10px;
@@ -249,7 +253,6 @@ footer {
     margin-right: 7em;
     font-size: 17px;
   }
-  
   .reset-btn {
     margin-left: 7em;
     font-size: 17px;
@@ -258,7 +261,10 @@ footer {
     margin-left: 7em;
     font-size: 17px;
   }
-  .lap-output{
+  .quote {
+    font-size: 16px;
+  }
+  .lap-output {
     grid-template-columns: 280px 50px 10px;
     font-size: 17px;
   }
@@ -371,7 +377,7 @@ footer {
 
 @media all and  (max-width: 307px) {
   
-  .primary-nav {
+  primary-nav {
     font-size: 15px;
  }
 
@@ -397,7 +403,7 @@ footer {
   }
   .lap-btn {
     margin-left: 3em;
-    font-size: 114px;
+    font-size: 14px;
   }
   .lap-output{
     grid-template-columns: 140px 40px 10px;

@@ -1,9 +1,8 @@
-
 let miliseconds = 0o0;
 let seconds = 0o0;
 let tens = 0o0;
 let lapNum = 0;
-let lapList = [{
+let lapList = JSON.parse(localStorage.getItem('lapItems')) || [{
   laps: lapNum,
   miliTime: miliseconds,
   secTime: seconds,
@@ -15,8 +14,6 @@ let incrementTens = document.querySelector('.js-tens');
 const startElement = document.querySelector('.js-start-btn');
 const resetElement = document.querySelector('.js-reset-btn');
 let intervalId;
-
-
 
 function startTimer ()  {
   
@@ -34,9 +31,6 @@ function startTimer ()  {
     miliseconds = 0;
     incrementMili.innerHTML = '0' + 0;
   }
-/*   if (seconds < 9) {
-    incrementSeconds.innerHTML = '0' + seconds;
-  } */
   if (seconds > 9) {
     incrementSeconds.innerHTML = seconds;
   }
@@ -46,58 +40,53 @@ function startTimer ()  {
     seconds = 0;
     incrementSeconds.innerHTML = '0' + 0;
   }
-/*   if (tens < 9) {
-    incrementTens.innerHTML = '0' + tens;
-  } */
-
-  localStorage.setItem('milisecondsItem', JSON.stringify(miliseconds));
-  localStorage.setItem('secondsItem', JSON.stringify(seconds));
-  localStorage.setItem('tensItem', JSON.stringify(tens));
-
 }
-
 
 startElement.addEventListener('click', () => {
   
-
   if (startElement.innerText === 'Start') {
     startElement.innerText = 'Stop';
     resetElement.innerText = 'Lap';
     startElement.classList.add('stop-btn');
     resetElement.classList.add('lap-btn');
-    intervalId = setInterval(startTimer, 10);
-    
-    
-  }else {
+    intervalId = setInterval(startTimer, 9.5);
+    if (lapNum === 0) {
+      lapList.splice({
+        laps: lapNum,
+      });
+      renderLap();
+    }
+  } else {
     startElement.innerText = 'Start';
     resetElement.innerText = 'Reset';
     startElement.classList.remove('stop-btn');
     resetElement.classList.remove('lap-btn');
     clearInterval(intervalId);
   }
-
-  
 });
 
 const lapElement = document.querySelector('.js-lap-output');
-
 
 resetElement.addEventListener('click', () => {
 
   if (resetElement.innerText === 'Reset'){
     clearInterval(intervalId);
-    tens = '00';
-    seconds = '00';
-    miliseconds = '00';
+    tens = 0;
+    seconds = 0;
+    miliseconds = 0;
     lapNum = 0;
-    incrementTens.innerHTML = tens;
-    incrementSeconds.innerHTML = seconds;
-    incrementMili.innerHTML = miliseconds;  
+    incrementTens.innerHTML = '0' + tens;
+    incrementSeconds.innerHTML = '0' + seconds;
+    incrementMili.innerHTML = '0' + miliseconds;  
     lapList.splice({
       laps: lapNum,
-    })
+      miliTime: miliseconds,
+      secTime: seconds,
+      tenTime: tens,
+    });
     renderLap();
     lapElement.innerHTML = ``;
+    localStorage.removeItem('lapItem');
   } 
 
   if (resetElement.innerText === 'Lap') {
@@ -118,16 +107,45 @@ function renderLap() {
   let lapsHTML = '';
 
   lapList.forEach((lapObject, index) => {
-    const { laps, miliTime, secTime, tenTime } = lapObject;
-    
-    let html = `
 
+    let { laps, miliTime, secTime, tenTime } = lapObject;
+
+    if (miliTime < 9) {
+      miliTime = '0' + miliTime;
+    };
+    if (miliTime >= 9) {
+      miliTime = miliTime;
+    };
+    if (miliTime > 99) {
+      miliTime = 0;
+      miliTime = '0' + 0;
+    }; 
+    if (secTime === 0) {
+      secTime = secTime;
+    };
+    if (secTime <= 9) {
+      secTime = '0' + secTime;
+    };  
+     if (secTime > 9) {
+      secTime = secTime;
+    };
+    if (secTime > 59) {
+      secTime = 0;
+      secTime = '0' + 0;
+    };
+    if (tenTime <= 9) {
+      tenTime = '0' + tenTime;
+    };
+
+    if (tenTime > 9) {
+      tenTime = tenTime;
+    };  
+   
+    let html = `
     <div class="lap-output"><div>Lap ${laps}</div><div>${tenTime}:${secTime}.${miliTime}</div></div>
     `;
-    lapsHTML += html;
 
+    lapsHTML += html;
   })
   lapElement.innerHTML = lapsHTML;
 };
-
-
