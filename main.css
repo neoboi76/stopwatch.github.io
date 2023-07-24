@@ -45,7 +45,7 @@ body {
   display: inline-block;
   margin: 1em;
   padding: 3.5em 3em 3.5em 3em;
-  font-size: 55px;
+  font-size: 50px;
   color: #008f11;
   flex-flow: row wrap;
   text-align: center;
@@ -111,7 +111,7 @@ body {
   align-items: center;
   margin-bottom: 2em;
   overflow: hidden;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .lap-output {
@@ -228,7 +228,7 @@ footer {
     font-size: 18px;
   }
   .quote {
-    font-size: 18px;;
+    font-size: 16px;;
   }
   .lap-output{
     grid-template-columns: 300px 50px 10px;
@@ -262,7 +262,7 @@ footer {
     font-size: 17px;
   }
   .quote {
-    font-size: 16px;
+    font-size: 15px;
   }
   .lap-output {
     grid-template-columns: 280px 50px 10px;
@@ -331,6 +331,9 @@ footer {
   .lap-btn {
     margin-left: 5em;
     font-size: 16px;
+  }
+  .quote {
+    font-size: 14px;
   }
   .lap-output{
     grid-template-columns: 230px 50px 10px;
@@ -404,6 +407,9 @@ footer {
   .lap-btn {
     margin-left: 3em;
     font-size: 14px;
+  }
+  .quote {
+    font-size: 12px;
   }
   .lap-output{
     grid-template-columns: 140px 40px 10px;
