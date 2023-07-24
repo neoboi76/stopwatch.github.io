@@ -49,7 +49,7 @@ startElement.addEventListener('click', () => {
     resetElement.innerText = 'Lap';
     startElement.classList.add('stop-btn');
     resetElement.classList.add('lap-btn');
-    intervalId = setInterval(startTimer, 9.5);
+    intervalId = setInterval(startTimer, 10);
     if (lapNum === 0) {
       lapList.splice({
         laps: lapNum,
