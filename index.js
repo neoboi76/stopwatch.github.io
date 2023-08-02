@@ -147,5 +147,6 @@ function renderLap() {
 
     lapsHTML += html;
   })
+  lapList.reverse()
   lapElement.innerHTML = lapsHTML;
 };
