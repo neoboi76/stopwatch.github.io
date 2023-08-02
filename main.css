@@ -183,6 +183,29 @@ footer {
   }
 }
 
+@media all and  (max-width: 768px) {
+  
+  .time-output {
+    font-size: 50px;
+  }
+  .start-btn{
+    margin-right: 11.5em;
+  }
+  .stop-btn{
+    margin-right: 11.5em;
+  }
+  .reset-btn {
+    margin-left: 11.5em;
+  }
+  .lap-btn {
+    margin-left: 11.5em;
+  }
+ 
+  .lap-output{
+    grid-template-columns: 485px 50px 10px;
+  }
+}
+
 @media all and  (max-width: 700px) {
   
   .time-output {
@@ -369,7 +392,7 @@ footer {
 }
 
 
-@media all and  (max-width: 356px) {
+@media all and  (max-width: 371px) {
   
   .primary-nav {
     font-size: 15px;
@@ -402,6 +425,7 @@ footer {
   .lap-output{
     grid-template-columns: 170px 50px 10px;
     font-size: 15px;
+
   }
 }
 
