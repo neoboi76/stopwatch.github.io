@@ -16,12 +16,11 @@ let incrementSeconds = document.querySelector('.js-seconds');
 let incrementTens = document.querySelector('.js-tens');
 const startElement = document.querySelector('.js-start-btn');
 const resetElement = document.querySelector('.js-reset-btn');
+const lapElement = document.querySelector('.js-lap-output');
+const firstLap = document.querySelector('.js-first-output');
 let intervalId;
 
-
-
 function startTimer ()  {
-  
   miliseconds++;
 
   if (miliseconds < 9) {
@@ -45,35 +44,40 @@ function startTimer ()  {
     seconds = 0;
     incrementSeconds.innerHTML = '0' + 0;
   }
-  console.log(miliseconds);
 }
 
-function mockTimer()  {
-  
+function mockTimer()  { 
   mockMili++;
 
   if (mockMili < 9) {
-    mockMili + '0' + mockMili;
+    showMili = '0' + mockMili;
   }
   if (mockMili > 9) {
-    mockMili = mockMili;
+    showMili = mockMili;
   }
   if (mockMili > 99) {
     mockSec++;
-    mockSec = mockSec;
     mockMili = '0' + 0;
   }
+  if (mockSec >= 0) {
+    showSec = '0' + mockSec;
+  }
   if (mockSec > 9) {
-    mockSec = mockSec;
+    showSec = mockSec;
   }
   if (mockSec > 59) {
     mockTens++;
-    mockTens = mockTens;
-    mockSec = '0' + 0;
+    showTens = '0' + mockTens;
+    mockSec = 0;
+    showSec  = '0' + mockSec;
   }
-  
-  console.log(mockMili);
-}
+  if (mockTens === 0){
+    showTens = '0' + mockTens;
+  }
+    if (lapNum >= 0) {
+      firstLap.innerHTML = `<div class="lap-output"><div>Lap ${lapNum + 1}</div><div>${showTens}:${showSec}.${showMili}</div></div>`
+    } 
+};
 
 startElement.addEventListener('click', () => {
   
@@ -83,17 +87,16 @@ startElement.addEventListener('click', () => {
     startElement.classList.add('stop-btn');
     resetElement.classList.add('lap-btn');
     intervalId = setInterval( () => {
-      startTimer();
+      startTimer(); 
       mockTimer();
-      
     }, 10);
-    
+
    if (lapNum === 0) {
       lapList.splice({
         laps: lapNum,
       });
+      renderLap();
     } 
-
 
   } else {
     startElement.innerText = 'Start';
@@ -104,9 +107,6 @@ startElement.addEventListener('click', () => {
   }
 });
 
-
-
-const lapElement = document.querySelector('.js-lap-output');
 
 resetElement.addEventListener('click', () => {
 
@@ -130,6 +130,7 @@ resetElement.addEventListener('click', () => {
     });
     renderLap();
     lapElement.innerHTML = ``;
+    firstLap.innerHTML = ``;
     localStorage.removeItem('lapItem');
   } 
 
@@ -147,8 +148,6 @@ resetElement.addEventListener('click', () => {
     mockMili = 0;
     mockSec = 0;
     mockTens = 0;
-    mockTimer();
-    console.log(mockMili)
   }
 });
 
@@ -157,7 +156,6 @@ function renderLap() {
   
   let listLap = lapList[0];
 
-  
   lapList.forEach((lapObject, index) => {
 
     let { laps, miliTime, secTime, tenTime } = lapObject;
@@ -197,16 +195,8 @@ function renderLap() {
     <div class="lap-output"><div>Lap ${laps}</div><div>${tenTime}:${secTime}.${miliTime}</div></div>
     `;
 
-    lapsHTML += html;
-    
+    lapsHTML += html; 
   });
-  
   lapElement.innerHTML = lapsHTML;
   lapList.reverse();
-  
  }
-
-
-function restartLap() {
-
-}
